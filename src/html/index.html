@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расчёт стоимости</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="main-wrap">
+    <div class="empty-space"></div>
+    <section class="container">
+        <h1 class="main-title">FTL: Прямая машина</h1>
+        
+        <fieldset class="fields-wrap">
+            <legend class="fields-wrap__legend">Маршрут</legend>
+            <form action="#" class="route-form">
+                <label class="fields-wrap__label">Откуда
+                    <input class="fields-wrap__field" type="text" name="from">
+                </label>
+
+                <label class="fields-wrap__label">Куда
+                    <input class="fields-wrap__field" type="text" name="to">
+                </label>
+            </form>
+        </fieldset>
+        
+        <fieldset class="fields-wrap fields-wrap--half">
+            <legend class="fields-wrap__legend">Транспорт</legend>
+            <form action="#" class="transport-form form--half">
+                <label class="fields-wrap__label fields-wrap__label--50">Грузоподъёмность
+                    <select class="transport-form__field" name="tonnage">
+                        <option value="" class="fields-wrap__item"></option>
+                        <option value="1" class="fields-wrap__item">Вариант 1</option>
+                        <option value="2" class="fields-wrap__item">Вариант 2</option>
+                        <option value="3" class="fields-wrap__item">Вариант 3</option>
+                        <option value="4" class="fields-wrap__item">Вариант 4</option>
+                        <option value="5" class="fields-wrap__item">Вариант 5</option>
+                    </select>
+                </label>
+
+                <label class="fields-wrap__label fields-wrap__label--50">Способ погрузки
+                    <select class="transport-form__field" name="loading-type">
+                        <option value="" class="fields-wrap__item"></option>
+                        <option value="rear" class="fields-wrap__item" selected>Задняя</option>
+                        <option value="2" class="fields-wrap__item">Вариант 2</option>
+                        <option value="3" class="fields-wrap__item">Вариант 3</option>
+                        <option value="4" class="fields-wrap__item">Вариант 4</option>
+                        <option value="5" class="fields-wrap__item">Вариант 5</option>
+                    </select>
+                </label>
+            </form>
+        </fieldset>
+
+        <fieldset class="fields-wrap fields-wrap--half">
+            <legend class="fields-wrap__legend">Груз</legend>
+            <form action="#" class="cargo-form form--half">
+                <label class="fields-wrap__label mob-half">Тип груза
+                    <select class="transport-form__field" name="type-cargo">
+                        <option value="" class="fields-wrap__item"></option>
+                        <option value="1" class="fields-wrap__item">Вариант 1</option>
+                        <option value="2" class="fields-wrap__item">Вариант 2</option>
+                        <option value="3" class="fields-wrap__item">Вариант 3</option>
+                        <option value="4" class="fields-wrap__item">Вариант 4</option>
+                        <option value="5" class="fields-wrap__item">Вариант 5</option>
+                    </select>
+                </label>
+
+                <label class="fields-wrap__label fields-wrap__label--50 mob-hidden">Класс опасности
+                    <select class="transport-form__field" name="dangerous-class">
+                        <option value="" class="fields-wrap__item"></option>
+                        <option value="1" class="fields-wrap__item">Вариант 1</option>
+                        <option value="2" class="fields-wrap__item">Вариант 2</option>
+                        <option value="3" class="fields-wrap__item">Вариант 3</option>
+                        <option value="4" class="fields-wrap__item">Вариант 4</option>
+                        <option value="5" class="fields-wrap__item" selected>
+                            Класс 5 — Окисляющие вещества и органические перекиси
+                        </option>
+                    </select>
+                </label>
+
+                <label class="fields-wrap__label fields-wrap__label--50">Объявленная ценность, ₽
+                    <input class="fields-wrap__field" type="text" name="price" placeholder="&ge; 1">
+                </label>
+
+                <label class="fields-wrap__label checkbox-label">
+                    <label for="temp" class="checkbox-area"><div class="checkbox-area__mark"></div></label>
+                    <input type="checkbox" class="checkbox" id="temp">Требуется температурный режим
+                </label>
+
+                <label class="fields-wrap__label fields-wrap__label--50 hiding">От, °C
+                    <input class="fields-wrap__field" type="text" name="min-temp" value="-20">
+                </label>
+
+                <label class="fields-wrap__label fields-wrap__label--50 hiding">До, °C
+                    <input class="fields-wrap__field" type="text" name="max-temp" value="+23">
+                </label>
+            </form>
+        </fieldset>
+
+        <fieldset class="fields-wrap">
+            <legend class="fields-wrap__legend">Время</legend>
+            <form action="#" class="time-form">
+                <label class="fields-wrap__label">Когда прибыть на точку
+                    <span class="time-form__opt-text">700 км в день</span>
+                    <div class="time-form__item">
+                        <div class="time-form__circle time-form__circle--first"></div>
+                        <input class="fields-wrap__field time-form__field time-form__field--first" type="text" placeholder="Адрес не указан" value="Длинный адрес с градиентом">
+                        <div class="time-form__btn time-form__btn--first">Не выбрано</div>
+                    </div>
+                </label>
+
+                <div class="time-form__item">
+                    <div class="time-form__circle"></div>
+                    <input class="fields-wrap__field time-form__field" type="text" placeholder="Адрес не указан">
+                    <div class="time-form__btn">Не выбрано</div>
+                </div>
+
+                <label class="fields-wrap__label fields-wrap__label">Комментарий к заказу
+                    <textarea class="fields-wrap__field fields-wrap__field--textarea" placeholder="Укажите особенности въезда на территорию склада или подъезда к адресу"></textarea>
+                </label>
+            </form>
+        </fieldset>
+    </section>
+    <section class="description">
+        <div class="description__area">
+            Для расчета стоимости необходимо ввести параметры груза, пункты отправки и прибытия.
+        </div>
+    </section>
+</div>
+</body>
+</html>

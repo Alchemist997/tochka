@@ -1,0 +1,37 @@
+@media (max-width: 960px) {
+    .empty-space {
+        display: none;
+    }
+    .main-wrap {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .description {
+        flex: 0 1 760px;
+        padding-top: 20px;
+        padding-bottom: 37px;
+        padding-left: 16px;
+        &__area {
+            margin-right: auto;
+        }
+    }
+}
+
+@media (max-width: 656px) {
+    .main-title {
+        font-size: 8.533vw;
+    }
+}
+
+@media (max-width: 450px) {
+    .fields-wrap__legend {
+        font-size: 5.33vw;
+    }
+}
+
+@media (max-width: 388px) {
+    select {
+        width: 50%;
+    }
+}
