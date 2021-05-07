@@ -33,11 +33,30 @@ module.exports = {
         rules: [
           {
             test: /\.css$/i,
-            use: [MiniCssExtractPlugin.loader, 'css-loader']
+            use: [
+              MiniCssExtractPlugin.loader,
+              'css-loader',
+              {
+                loader: "postcss-loader",
+                options: {
+                  postcssOptions: { plugins: ['autoprefixer'] }
+                }
+              }
+            ]
           },
           {
             test: /\.s[ac]ss$/i,
-            use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+            use: [
+              MiniCssExtractPlugin.loader,
+              'css-loader',
+              {
+                loader: "postcss-loader",
+                options: {
+                  postcssOptions: { plugins: ['autoprefixer'] }
+                }
+              },
+              'sass-loader'
+            ]
           },
           {
             test: /\.(woff|woff2|eot|ttf|otf)$/i,

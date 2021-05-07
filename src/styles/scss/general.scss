@@ -41,6 +41,12 @@ ul {
     list-style: none;
 }
 
+textarea, input[type='text'] { // Safari
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
 body {
     background-color: #343539;
     color: $text-color;
@@ -105,14 +111,17 @@ body {
         font-size: $legend-size;
         line-height: 30px;
         font-weight: 700;
+        padding-left: $legend-size + 8px;
     
         &::before {
+            font-family: sans-serif; // Фикс кривого шрифта для Safari, иначе съезжает вверх
+            position: absolute;
             display: flex;
+            left: 0;
             justify-content: center;
             align-items: center;
             counter-increment: formtitle;
             content: counter(formtitle);
-            margin-right: 8px;
             font-size: 16px;
             height: $legend-size;
             width: $legend-size;
@@ -161,6 +170,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: flex-end;
 }
 
 .checkbox {
@@ -214,12 +224,12 @@ body {
 
 
         &::after {
-            content: "";
+            content: '';
             display: block;
             position: absolute;
             right: 0;
             top: 0;
-            background: linear-gradient(to left, $accent-color 140px, transparent 180px);
+            background: linear-gradient(to left, $accent-color 140px, rgba($accent-color, 0) 180px);
             width: 180px;
             height: 100%;
         }
