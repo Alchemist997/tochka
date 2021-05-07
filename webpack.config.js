@@ -22,8 +22,7 @@ module.exports = {
             template: './src/html/index.html'
         }),
         new MiniCssExtractPlugin ({
-            filename: 'styles_build.css',
-            linkType: 'text/css'
+            filename: 'styles.css'
         })
     ],
     externals: {
@@ -37,7 +36,7 @@ module.exports = {
               MiniCssExtractPlugin.loader,
               'css-loader',
               {
-                loader: "postcss-loader",
+                loader: 'postcss-loader',
                 options: {
                   postcssOptions: { plugins: ['autoprefixer'] }
                 }
@@ -50,7 +49,7 @@ module.exports = {
               MiniCssExtractPlugin.loader,
               'css-loader',
               {
-                loader: "postcss-loader",
+                loader: 'postcss-loader',
                 options: {
                   postcssOptions: { plugins: ['autoprefixer'] }
                 }

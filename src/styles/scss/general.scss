@@ -12,6 +12,15 @@
 @font-face {
     font-family: 'Helvetica Neue';
     font-display: swap;
+    src: url('../fonts/HelveticaNeueCyr-Roman.woff2') format('woff2'),
+        url('../fonts/HelveticaNeueCyr-Roman.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    font-display: swap;
     src: url('../fonts/HelveticaNeueCyr-Bold.woff2') format('woff2'),
         url('../fonts/HelveticaNeueCyr-Bold.woff') format('woff');
     font-weight: 700;
@@ -41,7 +50,7 @@ ul {
     list-style: none;
 }
 
-textarea, input[type='text'] { // Safari
+textarea, input { //Safari iOS
     -webkit-appearance: none;
     -webkit-border-radius: 0;
     border-radius: 0;
@@ -102,7 +111,6 @@ body {
     border: none;
 
     &__legend {
-
         position: relative;
         top: 20px;
         display: inline-flex;
@@ -114,7 +122,11 @@ body {
         padding-left: $legend-size + 8px;
     
         &::before {
-            font-family: sans-serif; // Фикс кривого шрифта для Safari, иначе съезжает вверх
+            // Быстрый фикс кривого шрифта для Safari, иначе съезжает вверх
+            // Можно обнаруживать Safari по userAgent и только тогда подключать
+            // С нормальным шрифтом это не должно быть нужно
+            font-family: sans-serif;
+
             position: absolute;
             display: flex;
             left: 0;
@@ -149,6 +161,7 @@ body {
         padding: 13px 14px;
         height: 44px;
         border: none;
+        font-weight: 500;
 
         &::placeholder {
             opacity: 1;
@@ -222,7 +235,6 @@ body {
         padding-right: 120px;
         z-index: 1;
 
-
         &::after {
             content: '';
             display: block;
@@ -279,6 +291,10 @@ body {
     
     &__field {
         color: #c4c4c4;
+        margin-top: 0;
+        margin-bottom: 4px;
+        padding-left: 36px;
+        background-color: $accent-color;
     
         &--first {
             margin-top: 8px;
@@ -288,11 +304,6 @@ body {
             color: #cfcfcf;
             opacity: 1;
         }
-
-        margin-top: 0;
-        margin-bottom: 4px;
-        padding-left: 36px;
-        background-color: $accent-color;
     }
 }
 

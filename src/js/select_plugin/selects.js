@@ -1,6 +1,7 @@
 let hidden = document.querySelector('.mob-hidden');
 let half = document.querySelector('.mob-half');
 let texts = document.querySelectorAll('.jq-selectbox__select-text');
+let placeholder = document.querySelector('.placeholder');
 
 window.addEventListener('DOMContentLoaded', function() {
     if (window.innerWidth <= 388) {
@@ -10,6 +11,7 @@ window.addEventListener('DOMContentLoaded', function() {
             texts[i].style.maxWidth = '166px';
         };
     }
+    placeholder.textContent += 'а';
 });
 
 window.addEventListener('resize', function() {

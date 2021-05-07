@@ -1,3 +1,3 @@
 $('select').styler({
-    selectPlaceholder:'Не выбрано'
+    selectPlaceholder:'Не выбран'
 });
