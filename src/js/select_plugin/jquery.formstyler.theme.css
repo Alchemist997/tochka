@@ -59,9 +59,12 @@ select, option, .jq-selectbox ul, li {
 	display: flex;
 	align-items: center;
 	min-height: 28px;
-	padding: 0 12px;
+	padding: 4px 12px;
 	color: #000;
 	font-size: 14px;
+	line-height: 18px;
+	font-weight: 500;
+	z-index: 10;
 }
 .jq-selectbox li.selected {
 	background-color: #EF483E;

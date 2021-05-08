@@ -1,3 +1,4 @@
 $('select').styler({
-    selectPlaceholder:'Не выбран'
+    selectPlaceholder:'Не выбран',
+    selectSmartPositioning: '-1'
 });
