@@ -35,3 +35,9 @@
         width: 50%;
     }
 }
+
+@media (max-width: 375px) {
+    .fields-wrap__legend {
+        font-size: 20px;
+    }
+}

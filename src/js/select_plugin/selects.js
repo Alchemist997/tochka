@@ -5,10 +5,10 @@ let placeholder = document.querySelector('.placeholder');
 
 window.addEventListener('DOMContentLoaded', function() {
     if (window.innerWidth <= 388) {
-        hidden.style.display = 'none';
-        half.classList.add('fields-wrap__label--50');
+        hidden.style.display = 'none'; // Скрываем поле 'Класс опасности'
+        half.classList.add('fields-wrap__label--50'); // Уменьшаем наполовину ширину поля 'Тип груза'
         for (let i = 0; i < texts.length; i++) {
-            texts[i].style.maxWidth = '166px';
+            texts[i].style.maxWidth = '166px'; // Нужно для плагина селектов
         };
     }
     placeholder.textContent += 'а';
